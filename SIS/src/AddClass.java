@@ -5,16 +5,9 @@ import java.util.ArrayList;
 
 public class AddClass {
 	
-	private ArrayList<Student>students;
-	private static final String FILE_NAME = "studentData.txt";
-	
-	public AddClass(ArrayList<Student> students)
-	{
-		this.students = students;
-	}
-	
 	public void addStudent() 
 		{
+		Scanner studentFile = new Scanner(new File("studentData.txt"));
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the student details");
 		//firstname
@@ -23,9 +16,6 @@ public class AddClass {
 		//lastname
 		System.out.print("Last  Name");
 		String lastName = scanner.next();
-		//gpa
-		System.out.print("GPA");
-		double gpa = scanner.nextDouble();
 		//alg grade
 		System.out.print("Algebra Grade");
 		int algGrade = scanner.nextInt();
