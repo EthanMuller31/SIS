@@ -6,10 +6,8 @@ import java.util.Scanner;
 
 public class StudentList 
 	{
-		static List<Student> studentList;
-		public StudentList() {
-			studentList = new ArrayList<>();
-		}
+		static ArrayList<Student>students = new ArrayList<Student>();
+		
 		
 		public void fileRead() throws IOException
 			{
@@ -47,8 +45,8 @@ public class StudentList
 			return gradeValue;
 		}
 //This method is used to access the ArrayList for display menus etc.
-		public static List<Student> getStudents() {
-			return studentList;
+		public static ArrayList<Student> getStudents() {
+			return students;
 		}
 		
 	}

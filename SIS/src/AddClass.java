@@ -8,6 +8,7 @@ public class AddClass {
 	public void addStudent() 
 		{
 		Scanner studentFile = new Scanner(new File("studentData.txt"));
+		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the student details");
 		//firstname
@@ -28,7 +29,7 @@ public class AddClass {
 
 		//adding the new student 
 		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
-		students.add(newStudent);
+		StudentList.students.add(newStudent);
 		System.out.print("added")
 			}
 		public void deleteStudent()
