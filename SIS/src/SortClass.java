@@ -9,7 +9,7 @@ public class SortClass
 	static Scanner userStringInput = new Scanner(System.in);
 	static Scanner userInput = new Scanner(System.in);
 	static int sortPick;
-	
+	static int periodNumber;
 	public static void main(String[] args)
 	{
 		displaySortMenu();
@@ -24,21 +24,29 @@ public class SortClass
 			System.out.println("Type (3) for by class period");
 			System.out.println("Type (4) to return to the main menu");
 			
-			Scanner userInput = new Scanner(System.in);
 			int userChoice = userInput.nextInt();	
 			
-			if(userChoice == 1) {
-				Collections.sort(StudentList.studentList, new NameSorter());
-			}
-			else if(userChoice == 2) {
-				Collections.sort(StudentList.studentList, new GPASorter());
-			} else if (userChoice == 3) {
-				Collections.sort(StudentList.studentList, new PeriodSorter());
-			} else {
-				displayMainMenu();
+			switch(userChoice) {
+				case 1: 
+					Collections.sort(StudentList.studentList, new NameSorter());
+					break;
+				case 2:
+					Collections.sort(StudentList.studentList, new GPASorter());
+					break;
+				case 3:
+					Collections.sort(StudentList.studentList, new PeriodSorter());
+					break;
+				default:
+					displayMainMenu();
+					return;
 			}
 			SISrunner.displayData();
 		}
 
+	private static void sortPeriod() {
+		System.out.println("\nEnter the class period you would like (1, 2, 3)");
+		periodNumber = userInput.nextInt();
+		Collections.sort(StudentList.studentList, new PeriodSorter(periodNumber));
+	}
 }
 

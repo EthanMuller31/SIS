@@ -28,7 +28,7 @@ public class StudentList
 					
 
 					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
-					students.add(student);
+					studentList.add(student);
 
 				
 				
