@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class AddClass {
-	
+	Student.fillArray();
 	private ArrayList<Student>students;
-	private static final String FILE_NAME = "studentData.txt";
+
 	
 	public AddClass(ArrayList<Student> students)
 	{
@@ -15,37 +15,37 @@ public class AddClass {
 	
 	public void addStudent() 
 		{
-		Scanner scanner = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the student details");
 		//firstname
 		System.out.print("First Name");
-		String firstName = scanner.next();
+		String firstName = input.next();
 		//lastname
 		System.out.print("Last  Name");
-		String lastName = scanner.next();
+		String lastName = input.next();
 		//gpa
 		System.out.print("GPA");
-		double gpa = scanner.nextDouble();
+		double gpa = input.nextDouble();
 		//alg grade
 		System.out.print("Algebra Grade");
-		int algGrade = scanner.nextInt();
+		int algGrade = input.nextInt();
 		//eng grade
 		System.out.print("English Grade");
-		int engGrade = scanner.nextInt();
+		int engGrade = input.nextInt();
 		//chem grade
 		System.out.print("Chemistry Grade");
-		int chemGrade = scanner.nextInt();
+		int chemGrade = input.nextInt();
 
 		//adding the new student 
 		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
 		students.add(newStudent);
-		System.out.print("added")
+		System.out.print("added");
 			}
 		public void deleteStudent()
 		{ 
-			Scanner scanner = new Scanner(System.in);
+			Scanner input = new Scanner(System.in);
 			System.out.println("Enter the student you want to delete");
-			int index = scanner.nextInt();
+			int index = input.nextInt();
 
 			if(index >=0 && index <students.size())
 			{

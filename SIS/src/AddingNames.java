@@ -27,11 +27,7 @@ public class AddingNames {
 				Student newStudent = new Student(newName, newLast);
 			     insertStudentInOrder(newName, StudentList.students);
 			}
-		for (int i = 0; i < StudentList.students.size(); i++) {
-	          Student runner = Times.time.get(i);
-	            System.out.println((i + 1) + ")" + runner.getName() + " ~ " + runner.getTime());
-	        }
-	
+			
 	
 	
 	}
