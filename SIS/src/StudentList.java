@@ -9,7 +9,7 @@ public class StudentList
 		static ArrayList<Student>students = new ArrayList<Student>();
 		
 		
-		public void fileRead() throws IOException
+		public static void fileRead() throws IOException
 			{
 				
 				Scanner studentFile = new Scanner(new File("studentData.txt"));

@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 public class AddClass {
 	
-	public void addStudent() 
+	public static void addStudent() throws IOException
 		{
+		StudentList.fileRead();
 		Scanner studentFile = new Scanner(new File("studentData.txt"));
 		
 		Scanner scanner = new Scanner(System.in);
@@ -30,17 +31,17 @@ public class AddClass {
 		//adding the new student 
 		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
 		StudentList.students.add(newStudent);
-		System.out.print("added")
+		System.out.print("added");
 			}
-		public void deleteStudent()
+		public static  void deleteStudent()
 		{ 
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Enter the student you want to delete");
 			int index = scanner.nextInt();
 
-			if(index >=0 && index <students.size())
+			if(index >=0 && index <StudentList.students.size())
 			{
-				students.remove(index);
+				StudentList.students.remove(index);
 				System.out.println("deleted student");
 			}
 			else
@@ -49,7 +50,7 @@ public class AddClass {
 			}
 		}
 			
-		public void readFile()
+		public static void readFile()
 		{
 			
 		}
