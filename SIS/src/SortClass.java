@@ -28,12 +28,12 @@ public class SortClass
 			int userChoice = userInput.nextInt();	
 			
 			if(userChoice == 1) {
-				Collections.sort(StudentList.studentList, new NameSorter());
+				Collections.sort(StudentList.students, new NameSorter());
 			}
 			else if(userChoice == 2) {
-				Collections.sort(StudentList.studentList, new GPASorter());
+				Collections.sort(StudentList.students, new GPASorter());
 			} else if (userChoice == 3) {
-				Collections.sort(StudentList.studentList, new PeriodSorter());
+				Collections.sort(StudentList.students, new PeriodSorter());
 			} else {
 				displayMainMenu();
 			}

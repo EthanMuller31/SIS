@@ -1,17 +1,7 @@
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class AddingNames {
 	
-	static Scanner userStringInput = new Scanner(System.in);
-	static Scanner userInput = new Scanner(System.in);
-	
-	public static void main(String[] args) {
-			studentList.fillArray();
-			chooseAdd();
 
+<<<<<<< HEAD
 	}
 	
 	public static void chooseAdd() {
@@ -31,5 +21,7 @@ public class AddingNames {
 	
 	
 	}
+=======
+>>>>>>> upstream/master
 
 }
