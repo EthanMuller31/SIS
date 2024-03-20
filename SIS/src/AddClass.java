@@ -19,8 +19,8 @@ public class AddClass {
 		System.out.print("Last  Name");
 		String lastName = input.next();
 		//gpa
-		System.out.print("GPA");
-		double gpa = input.nextDouble();
+		//System.out.print("GPA");
+		//double gpa = input.nextDouble();
 		//alg grade
 		System.out.print("Algebra Grade");
 		int algGrade = input.nextInt();
@@ -30,10 +30,13 @@ public class AddClass {
 		//chem grade
 		System.out.print("Chemistry Grade");
 		int chemGrade = input.nextInt();
+			///this calculates the gpa so the person doesn't have to put it in above. 
+			double gpa = StudentList.calculateGPA(algGrade, engGrade, chemGrade);
 
 		//adding the new student 
 		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
-
+		StudentList.getStudents().add(newStudent);
+			
 		System.out.print("added");
 			}
 		public static  void deleteStudent()
