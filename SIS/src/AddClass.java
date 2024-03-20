@@ -30,8 +30,9 @@ public class AddClass {
 		//chem grade
 		System.out.print("Chemistry Grade");
 		int chemGrade = input.nextInt();
+			
 			///this calculates the gpa so the person doesn't have to put it in above. 
-			double gpa = StudentList.calculateGPA(algGrade, engGrade, chemGrade);
+			double gpa = StudentList.gpa(algGrade, engGrade, chemGrade);
 
 		//adding the new student 
 		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
@@ -44,7 +45,8 @@ public class AddClass {
 			Scanner input = new Scanner(System.in);
 			System.out.println("Enter the student you want to delete");
 			int index = input.nextInt();
-
+			
+			///this checks to see if the student index is valid and cam be removed
 			if(index >=0 && index <StudentList.students.size())
 			{
 				StudentList.students.remove(index);
@@ -56,10 +58,7 @@ public class AddClass {
 			}
 		}
 			
-		public static void readFile()
-		{
-			
-		}
+		
 		}
 	
 	
