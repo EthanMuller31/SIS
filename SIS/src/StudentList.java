@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class StudentList 
 	{
-		static List<Student> studentList;
+		static ArrayList<Student> studentList;
 		public StudentList() {
 			studentList = new ArrayList<>();
 		}
@@ -28,7 +28,7 @@ public class StudentList
 					
 
 					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
-					students.add(student);
+					studentList.add(student);
 
 				
 				
@@ -47,7 +47,7 @@ public class StudentList
 			return gradeValue;
 		}
 //This method is used to access the ArrayList for display menus etc.
-		public static List<Student> getStudents() {
+		public static ArrayList<Student> getStudents() {
 			return studentList;
 		}
 		
