@@ -27,7 +27,6 @@ public class StudentList
 					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, bioGrade);
 					students.add(student);
 
-					System.out.println("Loaded " + students.size() + " students.");
 
 				}
 				

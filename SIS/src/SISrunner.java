@@ -44,17 +44,20 @@ public class SISrunner
 		
 		
 		public static void displayData() {
-	        System.out.println("Displaying sorted student data:");
-	        for (Student student : StudentList.students) {
-	            String studentData = String.format("%s %s Algebra %s Biology %s English %s",
-	                                               student.getFirstName(), student.getLastName(),
-	                                               gradeToString(student.getAlgGrade()),
-	                                               gradeToString(student.getBiologyGrade()),
-	                                               gradeToString(student.getEngGrade()));
-	            System.out.println(studentData);
-	        }
+		    System.out.println("Displaying sorted student data:");
+		    int counter = 1;
+
+		    for (Student student : StudentList.getStudents()) {
+		        System.out.println(counter + ") " + student.getFirstName() + " " + student.getLastName()
+		            + " - GPA: " + String.format("%.2f", student.getGpa())
+		            + ", Algebra: " + SISrunner.gradeToString(student.getAlgGrade())
+		            + ", Biology: " + SISrunner.gradeToString(student.getBiologyGrade()) 
+		            + ", English: " + SISrunner.gradeToString(student.getEngGrade()));
+		        counter++;
+		    }
 		}
-	        private static String gradeToString(int grade) {
+
+	        static String gradeToString(int grade) {
 	            return switch (grade) {
 	                case 4 -> "A";
 	                case 3 -> "B";
@@ -63,4 +66,14 @@ public class SISrunner
 	                default -> "F";
 	            };
 	    }
+	        
+	        public static int letterGradeToNumeric(String grade) {
+	            return switch (grade.toUpperCase()) {
+	                case "A" -> 4;
+	                case "B" -> 3;
+	                case "C" -> 2;
+	                case "D" -> 1;
+	                default -> 0; 
+	            };
+	        }
 	}
