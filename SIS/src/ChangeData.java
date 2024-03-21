@@ -1,12 +1,12 @@
 import java.util.Scanner;
-
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 
 public class ChangeData {
 
-	public static void chooseChange()
+	public static void chooseChange() throws IOException
 
 	{
 
@@ -40,7 +40,7 @@ public class ChangeData {
 
 
 
-	public static void changeGrade() {
+	public static void changeGrade() throws IOException {
 	    int counter = 1;
 
 	    for (Student student : StudentList.getStudents()) {

@@ -15,7 +15,7 @@ public class SISrunner
 		}
 
 
-		public static void mainMenu()
+		public static void mainMenu() throws IOException
 			{
 			System.out.println("Welcome to the Student Data Base! Would you like to \n  (1) Add or delete a student.\n  (2) Change a student's schedule or grade.\n  (3) Re-sort the student database.");
 			Scanner userInput = new Scanner(System.in);
