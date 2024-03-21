@@ -10,13 +10,13 @@ public class SortClass
 	static Scanner userInput = new Scanner(System.in);
 	static int sortPick;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		displaySortMenu();
 
 	}
 	
-	static void displaySortMenu()
+	static void displaySortMenu() throws IOException
 		{
 			System.out.println("How Would you like to sort it?");
 			System.out.println("Type (1) for by last name");
