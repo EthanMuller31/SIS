@@ -6,16 +6,16 @@ public class Student
 		private double gpa;
 		private int algGrade;
 		private int engGrade;
-		private int chemGrade;
+		private int bioGrade;
 
-		public Student(String firstName, String lastName, double gpa, int algGrade, int engGrade, int chemGrade)
+		public Student(String firstName, String lastName, double gpa, int algGrade, int engGrade, int bioGrade)
 		{
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.gpa = gpa;
 			this.algGrade = algGrade;
 			this.engGrade = engGrade;
-			this.chemGrade = chemGrade;
+			this.bioGrade = bioGrade;
 		}
 		//first name
 		public String getFirstName()
@@ -45,30 +45,54 @@ public class Student
 			this.gpa = gpa;
 		}
 		//algebra grade
-		public int getAlgGrade()
+		public int getFirstPeriodGrade()
 		{
 			return algGrade;
 		}
-		public void setAlgGrade(int algGrade)
+		public void setFirstPeriodGrade(int algGrade)
 		{
 			this.algGrade = algGrade;
 		}
+		public int getAlgGrade()
+			{
+				return algGrade;
+			}
+			public void setAlgGrade(int algGrade)
+			{
+				this.algGrade = algGrade;
+			}
 		//english grade
-		public int getEngGrade()
+		public int getThirdPeriodGrade()
 		{
 			return engGrade;
 		}
-		public void setEngGrade(int engGrade)
+		public void setThirdPeriodGrade(int engGrade)
 		{
 			this.engGrade = engGrade;
 		}
+		public int getEngGrade()
+			{
+				return engGrade;
+			}
+			public void setEngGrade(int engGrade)
+			{
+				this.engGrade = engGrade;
+			}
 		//chem grade
-		public int getChemGrade()
+		public int getSecondPeriodGrade()
 		{
-			return chemGrade;
+			return bioGrade;
 		}
-		public void setChemGrade(int chemGrade)
+		public void setSecondPeriodGrade(int bioGrade)
 		{
-			this.chemGrade = chemGrade;
+			this.bioGrade = bioGrade;
 		}
+		public int getBiologyGrade()
+			{
+				return bioGrade;
+			}
+			public void setBiologyGrade(int bioGrade)
+			{
+				this.bioGrade = bioGrade;
+			}
 	}
