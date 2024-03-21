@@ -40,33 +40,17 @@ public class ChangeData {
 
 
 
-	public static void changeGrade()
+	public static void changeGrade() {
+	    int counter = 1;
 
-	{	
-
-		//loops through students and displays it with a number assigment
-
-		int counter = 1;
-
-		for(int i = 0; i < StudentList.students.size(); i++)
-
-		{
-
-			System.out.print(counter + StudentList.students.get(i).getFirstName());
-
-			System.out.print(StudentList.students.get(i).getLastName());
-
-			System.out.print(StudentList.students.get(i).getGpa());
-
-			System.out.print(StudentList.students.get(i).getAlgGrade());
-
-			System.out.print(StudentList.students.get(i).getEngGrade());
-
-			System.out.print(StudentList.students.get(i).getBiologyGrade());
-
-			counter++;
-
-		}
+	    for (Student student : StudentList.getStudents()) {
+	        System.out.println(counter + ") " + student.getFirstName() + " " + student.getLastName()
+	            + "  GPA: " + String.format("%.2f", student.getGpa())
+	            + " Algebra " + SISrunner.gradeToString(student.getAlgGrade())
+	            + " Biology " + SISrunner.gradeToString(student.getBiologyGrade())
+	            + " English " + SISrunner.gradeToString(student.getEngGrade()));
+	        counter++;
+	    }
 
 		
 
@@ -90,7 +74,7 @@ public class ChangeData {
 
 		
 
-		System.out.println("Type in the grade you would like your student to have.");
+		System.out.println("Type in the grade you would like your student to have. (0)F (1)D (2)C (3)B 4(A) ");
 
 		int newGrade = userInput.nextInt();
 
@@ -132,8 +116,11 @@ public class ChangeData {
 
 		{
 
-			int studentPick1 = userInput.nextInt();
+			SISrunner.mainMenu();
 
+		} else {
+			System.out.println("Invalid returning to main menu");
+			SISrunner.mainMenu();
 		}
 
 	}
