@@ -26,6 +26,7 @@ public class SortClass
 			
 			int userChoice = userInput.nextInt();	
 			
+<<<<<<< HEAD
 			switch(userChoice) {
 				case 1: 
 					Collections.sort(StudentList.studentList, new NameSorter());
@@ -39,6 +40,17 @@ public class SortClass
 				default:
 					displayMainMenu();
 					return;
+=======
+			if(userChoice == 1) {
+				Collections.sort(StudentList.students, new NameSorter());
+			}
+			else if(userChoice == 2) {
+				Collections.sort(StudentList.students, new GPASorter());
+			} else if (userChoice == 3) {
+				Collections.sort(StudentList.students, new PeriodSorter());
+			} else {
+				displayMainMenu();
+>>>>>>> 94d45ce19d8fa75a3d1cd7185e66b48fae86bacb
 			}
 			SISrunner.displayData();
 		}
