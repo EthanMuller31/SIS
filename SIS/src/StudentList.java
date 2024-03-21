@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class StudentList 
@@ -9,7 +8,7 @@ public class StudentList
 		static ArrayList<Student>students = new ArrayList<Student>();
 		
 		
-		public static void fileRead() throws IOException
+		public static  void fileRead() throws IOException
 			{
 				
 				Scanner studentFile = new Scanner(new File("studentData.txt"));
@@ -21,19 +20,19 @@ public class StudentList
 					String lastName = section[1];
 					int algGrade = changeGrade(section[3]);
 					int engGrade = changeGrade(section[5]);
-					int chemGrade = changeGrade(section[7]);
-					double gpa = (algGrade + engGrade + chemGrade) / 3.0;
+					int bioGrade = changeGrade(section[7]);
+					double gpa = (algGrade + engGrade + bioGrade) / 3.0;
 					
 
-					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
+					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, bioGrade);
 					students.add(student);
 
-				
-				
+					System.out.println("Loaded " + students.size() + " students.");
+
 				}
 				
 			}
-		private int changeGrade(String section) {
+		private static int changeGrade(String section) {
 			int gradeValue = switch (section.charAt(0)) {
 				case 'A' -> 4;
 				case 'B' -> 3;
@@ -44,7 +43,7 @@ public class StudentList
 			
 			return gradeValue;
 		}
-//This method is used to access the ArrayList for display menus etc.
+
 		public static ArrayList<Student> getStudents() {
 			return students;
 		}

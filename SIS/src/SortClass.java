@@ -16,13 +16,14 @@ public class SortClass
 
 	}
 	
-	private static void displaySortMenu()
+	static void displaySortMenu()
 		{
 			System.out.println("How Would you like to sort it?");
 			System.out.println("Type (1) for by last name");
 			System.out.println("Type (2) for by GPA");
 			System.out.println("Type (3) for by class period");
 			System.out.println("Type (4) to return to the main menu");
+			
 			
 			Scanner userInput = new Scanner(System.in);
 			int userChoice = userInput.nextInt();	
@@ -33,9 +34,16 @@ public class SortClass
 			else if(userChoice == 2) {
 				Collections.sort(StudentList.students, new GPASorter());
 			} else if (userChoice == 3) {
-				Collections.sort(StudentList.students, new PeriodSorter());
+				System.out.println("Enter the class period number (1) (2) or (3):");
+				int periodNumber = userInput.nextInt();
+				if(periodNumber < 1 || periodNumber > 3) {
+					System.out.println("Invalid period number. Type (1) (2) or (3):");
+					periodNumber = userInput.nextInt();
+				}
+
+				Collections.sort(StudentList.students, new PeriodSorter(periodNumber));
 			} else {
-				displayMainMenu();
+				SISrunner.mainMenu();
 			}
 			SISrunner.displayData();
 		}

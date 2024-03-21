@@ -1,8 +1,8 @@
-public class AddingNames {
-	
+import java.util.Scanner;
 
-<<<<<<< HEAD
-	}
+public class AddingNames {
+	static Scanner userStringInput = new Scanner(System.in);
+	static Scanner userInput = new Scanner(System.in);
 	
 	public static void chooseAdd() {
 		System.out.println("Would you like to 1) add a student or 2) delete a student?");
@@ -14,14 +14,12 @@ public class AddingNames {
 				String newName = userInput.nextLine();
 				String newLast = userInput.nextLine();
 				
-				Student newStudent = new Student(newName, newLast);
+				Student newStudent = new Student(newName, newLast, userChoice, userChoice, userChoice, userChoice);
 			     insertStudentInOrder(newName, StudentList.students);
 			}
 			
 	
 	
 	}
-=======
->>>>>>> upstream/master
 
 }
